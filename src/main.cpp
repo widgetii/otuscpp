@@ -5,7 +5,7 @@
 
 int main() {
     auto logger = spdlog::stdout_logger_mt("console");
-    logger->info("OtusCpp version " OTUSCPP_VERSION " started");
+    logger->info("OtusCpp version " OTUSCPP_VERNAME " started");
 
     std::cout << "Hello World!" << std::endl;
 

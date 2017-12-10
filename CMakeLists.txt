@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 
-project(otuscpp VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER} LANGUAGES CXX)
+project(otuscpp VERSION 1.0.0.$ENV{TRAVIS_BUILD_NUMBER} LANGUAGES CXX)
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
@@ -27,6 +27,7 @@ set_target_properties(helloworld_cli PROPERTIES
 set_target_properties(test_version PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
+    INCLUDE_DIRECTORIES ${CMAKE_BINARY_DIR}
 )
 
 target_link_libraries(test_version
