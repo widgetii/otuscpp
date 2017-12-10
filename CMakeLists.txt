@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 
-project(otuscpp VERSION 1.0.0.$ENV{TRAVIS_BUILD_NUMBER} LANGUAGES CXX)
+project(otuscpp VERSION 1.0.$ENV{TRAVIS_BUILD_NUMBER} LANGUAGES CXX)
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
