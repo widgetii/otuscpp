@@ -14,4 +14,5 @@ deploy:
   skip_cleanup: true
   script:
   - curl -T otuscpp-1.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uwidgetii:$BINTRAY_API_KEY "https://api.bintray.com/content/widgetii/otuscpp/otuscpp/$TRAVIS_BUILD_NUMBER/otuscpp-1.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -T ip_filter-1.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uwidgetii:$BINTRAY_API_KEY "https://api.bintray.com/content/widgetii/otuscpp/otuscpp/$TRAVIS_BUILD_NUMBER/ip_filter-1.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
 

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 
 project(otuscpp VERSION 1.0.$ENV{TRAVIS_BUILD_NUMBER} LANGUAGES CXX)
 
-find_package(Boost COMPONENTS unit_test_framework REQUIRED)
+find_package(Boost COMPONENTS unit_test_framework system REQUIRED)
 
 if(NOT CMAKE_BUILD_TYPE)
    set(CMAKE_BUILD_TYPE "Release")
@@ -15,10 +15,20 @@ add_executable(helloworld_cli
     src/main.cpp
     )
 
+add_executable(ip_filter
+    src/ip_filter.cpp
+    )
+
 add_executable(test_version
     tests/test_version.cpp)
 
 set_target_properties(helloworld_cli PROPERTIES
+    CXX_STANDARD 14
+    CXX_STANDARD_REQUIRED YES
+    COMPILE_OPTIONS -Wpedantic -Wall -Wextra
+)
+
+set_target_properties(ip_filter PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED YES
     COMPILE_OPTIONS -Wpedantic -Wall -Wextra
@@ -35,6 +45,7 @@ target_link_libraries(test_version
     )
 
 install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
+install(TARGETS ip_filter RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
